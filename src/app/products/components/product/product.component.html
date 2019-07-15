@@ -1,0 +1,13 @@
+<button (click)="onBuy()">Buy</button>
+<div *ngIf="basketSize > 0; else elseBlock">
+    <p>Products in basket: {{basketSize}}</p>
+</div>
+<ng-template #elseBlock>
+    <p>Basket is empty</p>
+</ng-template>
+<hr>
+<h2>Purchases:</h2>
+<app-product-list
+[products]="products"
+(pushToBasket)="onPushToBasket($event)"
+></app-product-list>

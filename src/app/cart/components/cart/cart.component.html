@@ -1,0 +1,15 @@
+<h2>Purchased products:</h2>
+<ul *ngIf="purchasedProducts.length > 0; else elseBlock">
+    <li *ngFor="let product of purchasedProducts">
+        <ul>
+            <li>{{product.name}}</li>
+            <li>{{product.description}}</li>
+            <li>{{product.price}}</li>
+            <li>{{product.category}}</li>
+            <li>{{product.isAvailable}}</li>
+        </ul>
+    </li>
+</ul>
+<ng-template #elseBlock>
+    <p>Basket is empty</p>
+</ng-template>
